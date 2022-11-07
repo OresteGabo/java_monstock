@@ -112,7 +112,7 @@ public class Ligne {
     @Override
     public String toString() {
         return
-                String.format("\"ligne\": {\n")+
+                //String.format("\"ligne\": {\n")+
                 String.format("\t\t\t\"id: \"%s\"\n",id)+
                 String.format("\t\t\t\"code_produit: \"%s\"\n",code_produit)+
                 String.format("\t\t\t\"libelle_fr: \"%s\"\n",libelle_fr)+

@@ -17,6 +17,7 @@ public class Contenu {
     private String contact_name;
     private String numero_commande,numero_livraison, statut,creation,modification,date_reception,type_message;
     private Fournisseur fournisseur;
+    private Site site_reception;
 
     private Ligne items;
     public Contenu(){
@@ -41,18 +42,16 @@ public class Contenu {
     this.date_reception="";
     this.type_message="";
     this.fournisseur=null;
+    this.site_reception=null;
 }
     public void setId(long id) {
         this.id = id;
     }
     public void setFournisseur(JSONObject contenu){
-        JSONObject jo=(JSONObject)contenu.get("fournisseur");
-
-        String code= (String) jo.get("code");
-        String nom=(String)contenu.get("nom");
-        String telephone=(String)contenu.get("telephone");
-
-        fournisseur =new Fournisseur(code,nom,telephone);
+        fournisseur =new Fournisseur(contenu);
+    }
+    public void setSite_reception(JSONObject contenu){
+        site_reception =new Site(contenu);
     }
     public void setContact_id(String contact_id) {
         this.contact_id = contact_id;
@@ -154,8 +153,9 @@ public class Contenu {
                 String.format("\t\t\"quantity: \"%s\"\n",quantity)+
                 String.format("\t\t\"quantityreceive: \"%s\"\n",quantityreceive)+
                 String.format("\t\t\"contact_name: \"%s\"\n",contact_name)+
-                String.format("\t\t\"fournisseur: [%s\n]",fournisseur==null?"null":fournisseur)+
-                String.format("\t\t\"items: [%s\n]",items==null?"null":items)+
+                String.format("\t\t\"fournisseur: %s\n",fournisseur==null?"null":fournisseur)+
+                String.format("\t\t\"site_reception: %s\n",site_reception==null?"null":site_reception)+
+                String.format("\t\t\"ligne: [{\n%s\n}]",items==null?"null":items)+
                 "\t\t},";
 
     }

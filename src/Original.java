@@ -23,6 +23,7 @@ public class Original {
 
         contenu=getContenuFromJson(l);
         contenu.setFournisseur(l);
+        contenu.setSite_reception(l);
     }
 
 
@@ -222,6 +223,7 @@ public class Original {
 
         return contenu;
     }
+
 
     public Original(int id, String message_type, String creation, int exported, Contenu contenu) {
         this.id = id;

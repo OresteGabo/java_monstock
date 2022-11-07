@@ -54,7 +54,7 @@ public class Main {
         System.out.println(c.getContenu());
 
         //affichage de l'objet Ligne en forme json
-        System.out.println(c.getContenu().getItems());
+        //System.out.println(c.getContenu().getItems());
 
     }
 
