@@ -25,14 +25,14 @@ public class Site{
         this.telephone=(String)fournisseur.get("telephone");
 
     }
-
+int indentation=4;
     @Override
     public String toString() {
         return
                 String.format(": {\n")+
-                String.format("\t\t\t\t\"site_id: \"%s\"\n",site_id)+
-                String.format("\t\t\t\t\"nom_site: \"%s\"\n",nom_site)+
-                String.format("\t\t\t\t\"tetephone: \"%s\"\n",telephone)+
-                "\t\t},";
+                String.format(Original.tabs(indentation)+"site_id: \"%s\"\n",site_id)+
+                String.format(Original.tabs(indentation)+"nom_site: \"%s\"\n",nom_site)+
+                String.format(Original.tabs(indentation)+"tetephone: \"%s\"\n",telephone)+
+                Original.tabs(indentation-2)+"},";
     }
 }

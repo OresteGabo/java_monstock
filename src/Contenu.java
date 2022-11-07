@@ -130,32 +130,33 @@ public class Contenu {
         return items;
     }
 
+    int indentation=2;
     @Override
     public String toString() {
         return String.format("\"Contenu\": {\n")+
-                String.format("\t\t\"type_message: %s\n",type_message)+
-                String.format("\t\t\"id: %s\n",id)+
-                String.format("\t\t\"numero_commande: %s\n",numero_commande)+
-                String.format("\t\t\"numero_livraison: %s\n",numero_livraison)+
-                String.format("\t\t\"statut: %s\n",statut)+
-                String.format("\t\t\"creation: %s\n",creation)+
-                String.format("\t\t\"modification: %s\n",modification)+
-                String.format("\t\t\"date_reception: %s\n",date_reception)+
-                String.format("\t\t\"contact_id: \"%s\"\n",contact_id)+
-                String.format("\t\t\"reference: \"%s\"\n",reference)+
-                String.format("\t\t\"datevalidationprovider: \"%s\"\n",datevalidationprovider)+
-                String.format("\t\t\"dateOrder: \"%s\"\n",dateOrder)+
-                String.format("\t\t\"datereceive_estimated: \"%s\"\n",datereceive_estimated)+
-                String.format("\t\t\"branchs_id: \"%s\"\n",branchs_id)+
-                String.format("\t\t\"user_text_5: \"%s\"\n",user_text_5)+
-                String.format("\t\t\"weight: \"%s\"\n",weight)+
-                String.format("\t\t\"branch_name: \"%s\"\n",branch_name)+
-                String.format("\t\t\"quantity: \"%s\"\n",quantity)+
-                String.format("\t\t\"quantityreceive: \"%s\"\n",quantityreceive)+
-                String.format("\t\t\"contact_name: \"%s\"\n",contact_name)+
-                String.format("\t\t\"fournisseur: %s\n",fournisseur==null?"null":fournisseur)+
-                String.format("\t\t\"site_reception: %s\n",site_reception==null?"null":site_reception)+
-                String.format("\t\t\"ligne: [{\n%s\n}]",items==null?"null":items)+
+                String.format(Original.tabs(indentation)+"\t\t\"type_message: %s\n",type_message)+
+                String.format(Original.tabs(indentation)+"\t\t\"id: %s\n",id)+
+                String.format(Original.tabs(indentation)+"numero_commande: %s\n",numero_commande)+
+                String.format(Original.tabs(indentation)+"numero_livraison: %s\n",numero_livraison)+
+                String.format(Original.tabs(indentation)+"statut: %s\n",statut)+
+                String.format(Original.tabs(indentation)+"creation: %s\n",creation)+
+                String.format(Original.tabs(indentation)+"modification: %s\n",modification)+
+                String.format(Original.tabs(indentation)+"date_reception: %s\n",date_reception)+
+                String.format(Original.tabs(indentation)+"contact_id: \"%s\"\n",contact_id)+
+                String.format(Original.tabs(indentation)+"reference: \"%s\"\n",reference)+
+                String.format(Original.tabs(indentation)+"datevalidationprovider: \"%s\"\n",datevalidationprovider)+
+                String.format(Original.tabs(indentation)+"dateOrder: \"%s\"\n",dateOrder)+
+                String.format(Original.tabs(indentation)+"datereceive_estimated: \"%s\"\n",datereceive_estimated)+
+                String.format(Original.tabs(indentation)+"branchs_id: \"%s\"\n",branchs_id)+
+                String.format(Original.tabs(indentation)+"user_text_5: \"%s\"\n",user_text_5)+
+                String.format(Original.tabs(indentation)+"weight: \"%s\"\n",weight)+
+                String.format(Original.tabs(indentation)+"branch_name: \"%s\"\n",branch_name)+
+                String.format(Original.tabs(indentation)+"quantity: \"%s\"\n",quantity)+
+                String.format(Original.tabs(indentation)+"quantityreceive: \"%s\"\n",quantityreceive)+
+                String.format(Original.tabs(indentation)+"contact_name: \"%s\"\n",contact_name)+
+                String.format(Original.tabs(indentation)+"fournisseur: %s\n",fournisseur==null?"null":fournisseur)+
+                String.format(Original.tabs(indentation)+"site_reception: %s\n",site_reception==null?"null":site_reception)+
+                String.format(Original.tabs(indentation)+"ligne: [\n\t\t\t{\n%s\n\t\t\t}\n\t\t]",items==null?"null":items)+
                 "\t\t},";
 
     }

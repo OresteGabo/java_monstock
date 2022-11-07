@@ -29,10 +29,10 @@ public class Fournisseur{
     @Override
     public String toString() {
         return  String.format(": {\n")+
-                String.format("\t\t\t\t\"code: \"%s\"\n",code)+
-                String.format("\t\t\t\t\"nom: \"%s\"\n",nom)+
-                String.format("\t\t\t\t\"telephone: \"%s\"\n",telephone)+
-                "\t\t},";
+                String.format(Original.tabs(4)+"code: \"%s\"\n",code)+
+                String.format(Original.tabs(4)+"nom: \"%s\"\n",nom)+
+                String.format(Original.tabs(4)+"telephone: \"%s\"\n",telephone)+
+                Original.tabs(2)+"},";
     }
 
 }

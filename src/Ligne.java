@@ -112,25 +112,24 @@ public class Ligne {
     @Override
     public String toString() {
         return
-                //String.format("\"ligne\": {\n")+
-                String.format("\t\t\t\"id: \"%s\"\n",id)+
-                String.format("\t\t\t\"code_produit: \"%s\"\n",code_produit)+
-                String.format("\t\t\t\"libelle_fr: \"%s\"\n",libelle_fr)+
-                String.format("\t\t\t\"quantite: %s\n",quantite)+
-                String.format("\t\t\t\"unite: \"%s\"\n",unite)+
-                String.format("\t\t\t\"lieu: %s\n",lieu)+
-                String.format("\t\t\t\"nb_jour_dlc_apres_decongelation: %s\n",nb_jour_dlc_apres_decongelation)+
-                String.format("\t\t\t\"nb_jour_dlv: %s\n",nb_jour_dlv)+
-                String.format("\t\t\t\"nb_jour_blocage: %s\n",nb_jour_blocage)+
-                String.format("\t\t\t\"fragile: \"%s\"\n",fragile)+
-                String.format("\t\t\t\"numero_lot: \"%s\"\n",numero_lot)+
-                String.format("\t\t\t\"dlc: \"%s\"\n",dlc)+
-                String.format("\t\t\t\"categorie: \"%s\"\n",categorie)+
-                String.format("\t\t\t\"idpurchaseorder: \"%s\"\n",idpurchaseorder)+
-                String.format("\t\t\t\"idproducts: \"%s\"\n",idproducts)+
-                String.format("\t\t\t\"quantityorder: \"%s\"\n",quantityorder)+
-                String.format("\t\t\t\"branchs_id: \"%s\"\n",branchs_id)+
-                "},";
+                String.format(Original.tabs(4)+"id: \"%s\"\n",id)+
+                String.format(Original.tabs(4)+"code_produit: \"%s\"\n",code_produit)+
+                String.format(Original.tabs(4)+"libelle_fr: \"%s\"\n",libelle_fr)+
+                String.format(Original.tabs(4)+"quantite: %s\n",quantite)+
+                String.format(Original.tabs(4)+"unite: \"%s\"\n",unite)+
+                String.format(Original.tabs(4)+"lieu: %s\n",lieu)+
+                String.format(Original.tabs(4)+"nb_jour_dlc_apres_decongelation: %s\n",nb_jour_dlc_apres_decongelation)+
+                String.format(Original.tabs(4)+"nb_jour_dlv: %s\n",nb_jour_dlv)+
+                String.format(Original.tabs(4)+"nb_jour_blocage: %s\n",nb_jour_blocage)+
+                String.format(Original.tabs(4)+"fragile: \"%s\"\n",fragile)+
+                String.format(Original.tabs(4)+"numero_lot: \"%s\"\n",numero_lot)+
+                String.format(Original.tabs(4)+"dlc: \"%s\"\n",dlc)+
+                String.format(Original.tabs(4)+"categorie: \"%s\"\n",categorie)+
+                String.format(Original.tabs(4)+"idpurchaseorder: \"%s\"\n",idpurchaseorder)+
+                String.format(Original.tabs(4)+"idproducts: \"%s\"\n",idproducts)+
+                String.format(Original.tabs(4)+"quantityorder: \"%s\"\n",quantityorder)+
+                String.format(Original.tabs(4)+"branchs_id: \"%s\"\n",branchs_id)+
+                "";
 
     }
 }

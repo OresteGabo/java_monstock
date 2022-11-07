@@ -85,92 +85,10 @@ public class Original {
     /**
      * Dans cette fontion on extrait l'objet Contenu qui est dans le code JSonObject l
      *
-     * @param l  l'objet json , source de données
-     * @return Contenu extrait dans le code
+     * @param l  l'objet json, source de données
+     * @return Contenu extrait dans le code json
      */
     public static  Contenu getContenuFromJson(JSONObject l){
-
-        /*String numero_commande=(String)l.get("numero_commande");
-        System.out.println("numero_commande:"+numero_commande);
-        String numero_livraison=(String)l.get("numero_livraison");
-        String statut=(String)l.get("statut");
-        String creation=(String)l.get("creation");
-        String modification=(String)l.get("modification");
-        String date_reception=(String)l.get("date_reception");
-        long id=(long)l.get("id");
-        String contact_id=(String)l.get("contact_id");
-        String reference=(String)l.get("reference");
-        String datevalidationprovider=(String)l.get("datevalidationprovider");
-        String dateOrder=(String)l.get("dateOrder");
-        String datereceive_estimated=(String)l.get("datereceive_estimated");
-        int branchs_id=(int)l.get("branchs_id");
-        String user_text_5=(String)l.get("user_text_5");
-        double weight=(double)l.get("weight");
-        String branch_name=(String)l.get("branch_name");
-        double quantity=(double)l.get("quantity");
-        double quantityreceive=(double)l.get("quantityreceive");
-        String contact_name=(String)l.get("contact_name");
-
-
-
-
-
-        Contenu contenu=new Contenu();
-
-        contenu.setBranchs_id(branchs_id);
-        contenu.setBranch_name(branch_name);
-        contenu.setWeight(weight);
-        contenu.setUser_text_5(user_text_5);
-        contenu.setReference(reference);
-        contenu.setQuantityreceive(quantityreceive);
-        contenu.setDatevalidationprovider(datevalidationprovider);
-        contenu.setId(id);
-        contenu.setDatereceive_estimated(datereceive_estimated);
-        contenu.setDateOrder(dateOrder);
-        contenu.setQuantity(quantity);
-        contenu.setContact_name(contact_name);
-        contenu.setContact_id(contact_id);
-
-        contenu.setNumero_commande(numero_commande);
-        contenu.setNumero_livraison(numero_livraison);
-        contenu.setStatut(statut);
-        contenu.setCreation(creation);
-        contenu.setModification(modification);
-        contenu.setDate_reception(date_reception);
-
-
-        contenu.setBranchs_id(branchs_id);
-
-
-
-        contenu.setNumero_commande(numero_commande);
-        contenu.setNumero_livraison(numero_livraison);
-        contenu.setStatut(statut);
-        contenu.setCreation(creation);
-        contenu.setModification(modification);
-        contenu.setDate_reception(date_reception);
-
-
-
-        contenu.setBranch_name(branch_name);
-        contenu.setWeight(weight);
-        contenu.setUser_text_5(user_text_5);
-        contenu.setReference(reference);
-        contenu.setQuantityreceive(quantityreceive);
-        contenu.setDatevalidationprovider(datevalidationprovider);
-        contenu.setId(id);
-        contenu.setDatereceive_estimated(datereceive_estimated);
-        contenu.setDateOrder(dateOrder);
-        contenu.setQuantity(quantity);
-        contenu.setContact_name(contact_name);
-        contenu.setContact_id(contact_id);
-
-
-
-
-
-        Ligne items=getLigneFromJson(l);
-        contenu.setItems(items);*/
 
         long id= (long) l.get("id");
         String contact_id=(String)l.get("contact_id");
@@ -219,8 +137,6 @@ public class Original {
         Ligne items=getLigneFromJson(l);
         contenu.setItems(items);
 
-
-
         return contenu;
     }
 
@@ -239,16 +155,30 @@ public class Original {
         return contenu;
     }
 
+    /**
+     * L'affichage des espaces vides (tabs)
+     *
+     * @param number nombre de tabs a afficher
+     * @return renvoi les tabs (number) fois en format String
+     */
+    public static String tabs(int number){
+        String str="";
+        for(int x=0;x<number;x++){
+            str=str+"\t";
+        }
+        return String.format("%s",str);
+    }
 
+        int indentation=1;
     @Override
     public String toString() {
         return
                 String.format("\"original\": {\n")+
-                String.format("\t\"id: %s\n",id)+
-                String.format("\t\"message_type: %s\n",message_type)+
-                String.format("\t\"creation: %s\n",creation)+
-                String.format("\t\"exported: %s\n",exported)+
-                String.format("\t\"contenu: [\n\t%s\n]",contenu==null?"null":contenu)+
+                String.format(tabs(indentation)+"\"id: %s\n",id)+
+                String.format(tabs(indentation)+"\"message_type: %s\n",message_type)+
+                String.format(tabs(indentation)+"\"creation: %s\n",creation)+
+                String.format(tabs(indentation)+"\"exported: %s\n",exported)+
+                String.format(tabs(indentation)+"\"contenu: [\n\t%s\n]",contenu==null?"null":contenu)+
 
                 "}";
     }
